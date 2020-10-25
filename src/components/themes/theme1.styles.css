@@ -1,0 +1,8 @@
+.textInputFlex {
+  display: flex;
+  align-items: center;
+}
+.w100 {
+  width: 100px;
+  color: black;
+}
