@@ -1,26 +1,34 @@
 import React from "react"
-import { Menu, Dropdown, Input, Button, Radio, Select } from "antd"
-const { Option } = Select
-const Theme1 = ({ normalStyle, setStyle }) => {
-  //Custom Style = Existing style in parent
+import { Input } from "antd"
+import {  Radio } from "antd"
 
-  //SetStyle = What new change we need to do in the parent
 
-  const changeTheme = (key, value) => {
-    //Take the existing theme and add the new theme style to it
-    var newStyle = { ...normalStyle }
-    var joinStyle = Object.assign(newStyle, { [key]: value })
-    setStyle(joinStyle)
-  }
 
+const Theme4 = ({normalStyle, setStyle,hi})=>{
+    const changeTheme = (key, value) => {
+        //normalStyle = Style which appears at first without any selection
+        //chosenStyles= Styles after choosing a theme
+        var newStyle = { ...normalStyle };
+        var joinStyle = Object.assign(newStyle, { [key]: value });
+        setStyle(joinStyle)
+      }
   return (
     <div>
       <div className="textInputFlex">
-        <p className="w100"> Top Text</p>
+        <p className="w100"> Top Logo</p>
+        <p>
+          <Input
+            placeholder="Insert image url"
+            onChange={event => changeTheme("topLogo", event.target.value)}
+          />
+        </p>
+      </div>
+      <div className="textInputFlex">
+        <p className="w100"> Upper Text</p>
         <p>
           <Input
             placeholder="Basic usage"
-            onChange={event => changeTheme("upperText", event.target.value)}
+            onChange={event => changeTheme("topText", event.target.value)}
           />
         </p>
       </div>
@@ -33,9 +41,9 @@ const Theme1 = ({ normalStyle, setStyle }) => {
           />
         </p>
       </div>
-      
+     
       <div className="textInputFlex">
-        <p className="w100">Circle Color</p>
+        <p className="w100">Square Color</p>
         <div>
           <Radio.Group
             defaultValue="a"
@@ -66,4 +74,4 @@ const Theme1 = ({ normalStyle, setStyle }) => {
     </div>
   )
 }
-export default Theme1;
+export default Theme4;
