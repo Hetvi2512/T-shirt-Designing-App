@@ -1,10 +1,10 @@
-import React from "react"
+import React ,{useState} from "react"
 import { Input } from "antd"
 import {  Radio } from "antd"
 
 
-
 const Theme4 = ({normalStyle, setStyle,hi})=>{
+    
     const changeTheme = (key, value) => {
         //normalStyle = Style which appears at first without any selection
         //chosenStyles= Styles after choosing a theme
@@ -99,6 +99,7 @@ const Theme4 = ({normalStyle, setStyle,hi})=>{
           </Radio.Group>
         </div>
       </div>
+     
     </div>
   )
 }

@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import { Menu, Dropdown, Input, Button } from "antd"
 import { DownOutlined } from "@ant-design/icons"
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import ClipboardIcon from 'react-clipboard-icon'
 import Theme1 from "./theme1.component"
 import Theme2 from "./theme2.component"
 import Theme3 from "./theme3.component"
@@ -9,14 +12,17 @@ import Theme4 from "./theme4.component"
 import './themes.styles.css';
 import Display from './../display/display.component';
 
+toast.configure()
 
 
-export default ({ setThemeNumber, themeNumber, addOrder }) => {
+export default ({ setThemeNumber, themeNumber }) => {
   const [selectedTheme, setSelectedTheme] = useState(0)
   const [theme1Style, setTheme1Style] = useState({})
   const [theme2Style, setTheme2Style] = useState({})
   const [theme3Style, setTheme3Style] = useState({})
   const [theme4Style, setTheme4Style] = useState({})
+
+  const style = { fill: 'black' }
  
 
   const menu = (
@@ -28,7 +34,7 @@ export default ({ setThemeNumber, themeNumber, addOrder }) => {
     </Menu>
   )
 
-  
+ 
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -54,13 +60,12 @@ export default ({ setThemeNumber, themeNumber, addOrder }) => {
           />
         </div>
         <div style={{ margin: 10, marginTop: 30 }}>
-          <div style={{ fontWeight: 600, color: "black" }}>
-            Select Theme
-            <Dropdown overlay={menu}>
+        
+            <Dropdown overlay={menu} >
               <a
                 className="ant-dropdown-link"
                 onClick={e => e.preventDefault()}
-                style={{ background: "white", padding: 10, marginLeft: 15,width:900 }}
+                style={{ background: "white", padding: 10, marginLeft: 15,width:900, fontWeight: 600, color: "black" }}
               >
                 {selectedTheme !== 0
                   ? `Theme ${selectedTheme}`
@@ -68,10 +73,10 @@ export default ({ setThemeNumber, themeNumber, addOrder }) => {
                 <DownOutlined />
               </a>
             </Dropdown>
-          </div>
+         
           <hr color="black" style={{ marginTop: 20 }} />
 
-          {selectedTheme === 1 && (
+          {selectedTheme === 1 &&  (
             <Theme1 normalStyle={theme1Style} setStyle={setTheme1Style} />
           )}
           {selectedTheme === 2 && (
@@ -82,6 +87,7 @@ export default ({ setThemeNumber, themeNumber, addOrder }) => {
           )}
           {selectedTheme === 4 && (
             <Theme4 normalStyle={theme4Style} setStyle={setTheme4Style} />
+
           )}
 
           {selectedTheme !== 0 && (
@@ -90,7 +96,7 @@ export default ({ setThemeNumber, themeNumber, addOrder }) => {
                 <p className="w100">Order for</p>
                 <p>
                   <Input
-                    placeholder="Basic usage"
+                    placeholder="Name"
                   //  onChange={event => setOrderFor(event.target.value)}
                   />
                 </p>
@@ -105,11 +111,41 @@ export default ({ setThemeNumber, themeNumber, addOrder }) => {
                   fontWeight: 400,
                 }}
               >
-                Submit
+               Save
               </Button>
-            
-            </div>
-          )}
+            {(selectedTheme ===3 || selectedTheme === 4) && 
+             <div className='test-warning'>
+                    <p>Try Below Image URL's </p>
+                    <span>https://image.com/1.png  </span>
+                    
+                      <CopyToClipboard text={"http://www.clker.com/cliparts/j/r/L/t/m/P/no-background-wreath-md.png"}
+                          onCopy={() => {
+                            toast("URL Copied!",{autoClose:3000})
+                          }}>
+                              <ClipboardIcon
+                                  size={40}
+                                  style={style}
+                                  />
+                          </CopyToClipboard>
+                       
+                          <br/>
+
+
+                          <span>https://image.com/2.png  </span>
+                        <CopyToClipboard text={"https://purepng.com/public/uploads/large/purepng.com-superman-logosupermanfictional-superherocomic-booksdc-comicscharacterjerry-siegelson-of-kryptonaction-comicsman-of-steel-1701528658388ukrvz.png"}
+                         onCopy={() => {
+                          toast("URL Copied!",{autoClose:3000})
+                        }}>
+                              <ClipboardIcon
+                                  size={40}
+                                  style={style}
+                                  />
+                          </CopyToClipboard>
+                      
+            </div> 
+        }
+                    </div>
+                  )}
         </div>
         
       </div>

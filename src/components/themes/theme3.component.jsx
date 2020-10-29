@@ -1,9 +1,11 @@
-import React from "react"
+import React, {useState} from "react"
 import { Input } from "antd"
 import { Select, Radio } from "antd"
-const { Option } = Select
+
+
 
 const Theme3 = ({normalStyle, setStyle})=>{
+
     const changeTheme = (key, value) => {
         //normalStyle = Style which appears at first without any selection
         //chosenStyles= Styles after choosing a theme
@@ -24,7 +26,9 @@ const Theme3 = ({normalStyle, setStyle})=>{
       </div>
      
       
+      
     </div>
+    
   )
 }
 export default Theme3;
