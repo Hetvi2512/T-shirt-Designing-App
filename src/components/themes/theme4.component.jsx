@@ -27,7 +27,7 @@ const Theme4 = ({normalStyle, setStyle,hi})=>{
         <p className="w100"> Upper Text</p>
         <p>
           <Input
-            placeholder="Basic usage"
+            placeholder="Upper Text"
             onChange={event => changeTheme("topText", event.target.value)}
           />
         </p>
@@ -36,16 +36,32 @@ const Theme4 = ({normalStyle, setStyle,hi})=>{
         <p className="w100">Bottom Text</p>
         <p>
           <Input
-            placeholder="Basic usage"
+            placeholder="Bottom Text"
             onChange={event => changeTheme("bottomText", event.target.value)}
           />
         </p>
+      </div>
+      <div className="textInputFlex">
+      <p className="w100">Text Color</p>
+      <div>
+      <select className="form-control mb-2"
+      onChange={value => {
+        changeTheme("textColor", value.target.value)
+      }}>
+      <option>Black</option>
+      <option>White</option>
+      <option>Blue</option>
+      <option>Green</option>
+      <option>Pink</option>
+      <option>Purple</option>
+      </select>
+      </div>
       </div>
      
       <div className="textInputFlex">
         <p className="w100">Square Color</p>
         <div>
-          <Radio.Group
+        <Radio.Group
             defaultValue="a"
             buttonStyle="solid"
             onChange={value => {
@@ -67,6 +83,18 @@ const Theme4 = ({normalStyle, setStyle,hi})=>{
             <Radio.Button
               value="orange"
               style={{ background: "orange" }}
+            ></Radio.Button>
+             <Radio.Button
+              value="yellow"
+              style={{ background: "yellow" }}
+            ></Radio.Button>
+            <Radio.Button
+              value="#8ED1FC"
+              style={{ background: "#8ED1FC" }}
+            ></Radio.Button>
+            <Radio.Button
+              value="#f4b6ab"
+              style={{ background: "#f4b6ab"}}
             ></Radio.Button>
           </Radio.Group>
         </div>

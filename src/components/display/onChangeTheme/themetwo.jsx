@@ -25,6 +25,7 @@ const ThemeTwo = ({ customStyle }) => {
         >
           <div
             style={{
+              color: customStyle.textColor ? customStyle.textColor: "black",
               fontWeight: "800",
               fontSize: 16,
               display: "flex",
@@ -35,10 +36,11 @@ const ThemeTwo = ({ customStyle }) => {
             }}
             className="font1"
           >
-            {customStyle.topText ? customStyle.topText : "I Love"}
+            {customStyle.uppertext ? customStyle.uppertext : "I Love"}
           </div>
           <div
             style={{
+              color: customStyle.textColor ? customStyle.textColor: "black",
               fontWeight: "800",
               fontSize: 16,
               position: "absolute",
@@ -47,7 +49,7 @@ const ThemeTwo = ({ customStyle }) => {
             }}
             className="font1"
           >
-            {customStyle.bottomText ? customStyle.bottomText : "Mojo"}
+            {customStyle.bottomtext ? customStyle.bottomtext : "Mojo"}
           </div>
         </div>
       </div>

@@ -23,37 +23,7 @@ const Theme3 = ({normalStyle, setStyle})=>{
         </p>
       </div>
      
-      <div className="textInputFlex">
-        <p className="w100">Circle Color</p>
-        <div>
-          <Radio.Group
-            defaultValue="a"
-            buttonStyle="solid"
-            onChange={event => changeTheme("stripeColor", event.target.value)}
-          >
-            <Radio.Button
-              value="red"
-              style={{ background: "red" }}
-            ></Radio.Button>
-            <Radio.Button
-              value="blue"
-              style={{ background: "blue" }}
-            ></Radio.Button>
-            <Radio.Button
-              value="green"
-              style={{ background: "green" }}
-            ></Radio.Button>
-            <Radio.Button
-              value="orange"
-              style={{ background: "orange" }}
-            ></Radio.Button>
-            <Radio.Button
-              value="white"
-              style={{ background: "white" }}
-            ></Radio.Button>
-          </Radio.Group>
-        </div>
-      </div>
+      
     </div>
   )
 }

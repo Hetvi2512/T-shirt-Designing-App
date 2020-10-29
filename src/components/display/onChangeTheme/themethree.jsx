@@ -42,7 +42,7 @@ const ThemeThree = ({ customStyle }) => {
               }}
             >
               <img
-                src={"https://pbs.twimg.com/media/DzNLs_dX4AAaYmX.png"}
+                src={"https://www.pngfind.com/pngs/m/117-1171416_png-png-panda-cartoon-no-background-transparent-png.png"}
                  src={customStyle.rightLogo ? customStyle.rightLogo : logo}
               
                 height="130px"

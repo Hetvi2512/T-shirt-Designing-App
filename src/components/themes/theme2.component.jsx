@@ -12,7 +12,7 @@ const Theme2 = ({normalStyle, setStyle})=>{
         //chosenStyles= Styles after choosing a theme
         var newStyle = { ...normalStyle };
         var joinStyle = Object.assign(newStyle, { [key]: value });
-      //  setStyle = joinStyle;
+        setStyle(joinStyle);
       }
   return (
     <div>
@@ -30,20 +30,37 @@ const Theme2 = ({normalStyle, setStyle})=>{
 
             <div className="textInputFlex">
                 <p className="w100">
-                    Bottom Text   </p>
+                    Bottom Text</p>
                     <p>
                         <Input
                         placeholder=" Bottom Text"
-                       onChange={event=>changeTheme("bottomtext",event.target.value)}
-                        />
-                 
+                        onChange={event=>changeTheme("bottomtext",event.target.value)}
+                    />
+                    
                 </p>
             </div>
+
+            <div className="textInputFlex">
+      <p className="w100">Text Color</p>
+      <div>
+      <select className="form-control mb-2"
+      onChange={value => {
+        changeTheme("textColor", value.target.value)
+      }}>
+      <option>Black</option>
+      <option>White</option>
+      <option>Blue</option>
+      <option>Green</option>
+      <option>Pink</option>
+      <option>Purple</option>
+      </select>
+      </div>
+      </div>
      
       <div className="textInputFlex">
         <p className="w100">Back Color</p>
         <div>
-          <Radio.Group
+        <Radio.Group
             defaultValue="a"
             buttonStyle="solid"
             onChange={value => {
@@ -65,6 +82,18 @@ const Theme2 = ({normalStyle, setStyle})=>{
             <Radio.Button
               value="orange"
               style={{ background: "orange" }}
+            ></Radio.Button>
+             <Radio.Button
+              value="yellow"
+              style={{ background: "yellow" }}
+            ></Radio.Button>
+            <Radio.Button
+              value="#8ED1FC"
+              style={{ background: "#8ED1FC" }}
+            ></Radio.Button>
+            <Radio.Button
+              value="#f4b6ab"
+              style={{ background: "#f4b6ab"}}
             ></Radio.Button>
           </Radio.Group>
         </div>

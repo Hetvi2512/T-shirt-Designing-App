@@ -25,6 +25,7 @@ const ThemeOne = ({ customStyle }) => {
         >
           <div
             style={{
+             color: customStyle.textColor ? customStyle.textColor: "black",
               fontWeight: "800",
               fontSize: 18,
               display: "flex",
@@ -35,10 +36,12 @@ const ThemeOne = ({ customStyle }) => {
             }}
             className="font1"
           >
+            
             {customStyle.upperText ? customStyle.upperText : "I Love"}
           </div>
           <div
             style={{
+              color: customStyle.textColor ? customStyle.textColor: "black",
               fontWeight: "800",
               fontSize: 18,
               position: "absolute",

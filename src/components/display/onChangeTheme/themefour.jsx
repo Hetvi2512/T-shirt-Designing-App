@@ -46,6 +46,7 @@ const ThemeFour = ({ customStyle }) => {
           </div>
           <div
             style={{
+              color: customStyle.textColor ? customStyle.textColor: "black",
               fontWeight: "800",
               fontSize: 18,
               display: "flex",
@@ -60,6 +61,7 @@ const ThemeFour = ({ customStyle }) => {
           </div>
           <div
             style={{
+              color: customStyle.textColor ? customStyle.textColor: "black",
               fontWeight: "800",
               fontSize: 18,
               position: "absolute",
